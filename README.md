@@ -1,4 +1,4 @@
-# 🐾 Ejercicio VetClinic Light Monolith
+# Ejercicio VetClinic Light Monolith
 
 Este ejercicio tiene como objetivo desarrollar un **sistema básico de gestión de clínicas veterinarias** utilizando **Spring Boot**.  
 
@@ -10,9 +10,8 @@ El trabajo se divide en dos fases:
 En ambas fases se incluyen **colecciones de Postman** para verificar la correcta implementación de los endpoints.  
 ⚠️ Importante: en la segunda fase, cualquier request sin token válido debe devolver **401 Unauthorized**.  
 
----
 
-## 🔧 Parte 1: Implementación de API RESTful
+# Parte 1: Implementación de API RESTful
 
 **Objetivo:** construir una API REST monolítica con Spring Boot usando arquitectura por capas, sin incluir aún seguridad ni Swagger.  
 
@@ -56,9 +55,7 @@ En ambas fases se incluyen **colecciones de Postman** para verificar la correcta
 8. Probar los endpoints con la colección de **Postman (sin seguridad)**.  
 9. Mantener el proyecto en Git usando un flujo de ramas claro (**Gitflow**).  
 
-👉 Consejo: comienza probando con H2 en memoria y luego, si quieres, cambia a PostgreSQL.  
-
----
+👉 Consejo: comienza probando con H2 en memoria y luego, si quieres, cambia a PostgreSQL. 
 
 ## ✅ Tests con Postman (Parte 1)
 
@@ -88,9 +85,48 @@ Validaciones que realiza Postman:
 - Entidades contienen los campos mínimos (`id`, `nombre`, etc.).  
 - IDs persistidos correctamente (`ownerId`, `petId`, `visitId`).  
 
----
+## Flujo típico para este proyecto:  
 
-## 🚀 Parte 2: Seguridad con OAuth2.0 (JWT) y Swagger
+1. `mvn clean install` → Compilar y ejecutar tests.  
+2. `mvn spring-boot:run` → Levantar el backend en `localhost:8080`.  
+3. Probar la API con **Postman**. 
+
+## Comandos Maven útiles
+
+Estos comandos te ayudarán a compilar, ejecutar y probar tu proyecto en Spring Boot:  
+
+### 🔨 Construcción y compilación
+```bash
+mvn clean
+```
+➡️ Elimina la carpeta `target/` y limpia todos los artefactos compilados. Úsalo antes de recompilar para evitar residuos.  
+
+```bash
+mvn clean install
+```
+➡️ Compila el código, ejecuta los tests y genera el **.jar** en la carpeta `target/`.  
+
+
+### ▶️ Ejecución de la aplicación
+```bash
+mvn spring-boot:run
+```
+➡️ Arranca directamente la aplicación Spring Boot sin necesidad de ir a `target/`.  
+
+```bash
+java -jar target/vetclinic-0.0.1-SNAPSHOT.jar
+```
+➡️ Ejecuta el **.jar** generado en la carpeta `target/` (reemplaza el nombre por el de tu proyecto).  
+
+
+### 🧪 Tests
+```bash
+mvn test
+```
+➡️ Ejecuta únicamente los tests unitarios del proyecto.  
+
+
+# Parte 2: Seguridad con OAuth2.0 (JWT) y Swagger
 
 **Objetivo:** añadir seguridad con **OAuth2.0 usando JWT Bearer Token** (mediante Auth0) y documentar la API con Swagger/OpenAPI.  
 
