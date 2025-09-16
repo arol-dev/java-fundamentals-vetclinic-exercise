@@ -10,6 +10,9 @@ El trabajo se divide en dos fases:
 En ambas fases se incluyen **colecciones de Postman** para verificar la correcta implementación de los endpoints.  
 ⚠️ Importante: en la segunda fase, cualquier request sin token válido debe devolver **401 Unauthorized**.  
 
+## Trabajo y entrega
+
+Para empezar a trabajar en este ejercicio, **haz un fork** a tu cuenta, clonalo y trabaja en local. Una vez hayas acabado con cada una de las partes, haz un push y entonces **crea un pull request** hacia este repositorio con tu `nombre.apellido`.
 
 # Parte 1: Implementación de API RESTful
 
