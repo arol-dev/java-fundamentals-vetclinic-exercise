@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "4bbebcf6-73da-4661-8db1-0b9a81ee800c",
+  "name": "java-fundamentals-vetclinic (API Tests)",
+    "description": "Colección Postman para VetClinic Light (Parte 1). Incluye Owners, Pets y Visits.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "accessToken",
+      "value": ""
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "type": "string",
+        "value": "{{accessToken}}"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Auth0 - Get Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "grant_type", "value": "client_credentials", "type": "text" },
+            { "key": "client_id", "value": "{{clientId}}", "type": "text" },
+            { "key": "client_secret", "value": "{{clientSecret}}", "type": "text" },
+            { "key": "audience", "value": "{{audience}}", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "https://{{auth0Domain}}/oauth/token",
+          "protocol": "https",
+          "host": [ "{{auth0Domain}}" ],
+          "path": [ "oauth", "token" ]
+        }
+      }
+    },
+    {
+      "name": "Owners",
+      "item": [
+        {
+          "name": "GET /owners",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/owners",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "owners"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /owners",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"{{ownerName}}\", \"phone\": \"{{ownerPhone}}\", \"address\": \"{{ownerAddress}}\"}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/owners",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "owners"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pets",
+      "item": [
+        {
+          "name": "GET /pets",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/pets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pets"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /pets",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"name\": \"{{petName}}\", \"type\": \"{{petType}}\", \"birthDate\": \"{{petBirthDate}}\", \"owner\": {\"id\": {{ownerId}}}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pets"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Visits",
+      "item": [
+        {
+          "name": "GET /visits",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/visits",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "visits"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST /visits",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"date\": \"{{visitDate}}\", \"reason\": \"{{visitReason}}\", \"pet\": {\"id\": {{petId}}}}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/visits",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "visits"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
