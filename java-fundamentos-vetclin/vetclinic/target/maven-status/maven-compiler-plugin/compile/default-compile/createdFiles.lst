@@ -1,0 +1,13 @@
+com\xavicreus\vetclinic\repository\OwnerRepository.class
+com\xavicreus\vetclinic\controller\PetController.class
+com\xavicreus\vetclinic\controller\VisitController.class
+com\xavicreus\vetclinic\service\OwnerService.class
+com\xavicreus\vetclinic\repository\PetRepository.class
+com\xavicreus\vetclinic\entity\Visit.class
+com\xavicreus\vetclinic\controller\OwnerController.class
+com\xavicreus\vetclinic\entity\Owner.class
+com\xavicreus\vetclinic\VetclinicApplication.class
+com\xavicreus\vetclinic\service\PetService.class
+com\xavicreus\vetclinic\service\VisitService.class
+com\xavicreus\vetclinic\entity\Pet.class
+com\xavicreus\vetclinic\repository\VisitRepository.class

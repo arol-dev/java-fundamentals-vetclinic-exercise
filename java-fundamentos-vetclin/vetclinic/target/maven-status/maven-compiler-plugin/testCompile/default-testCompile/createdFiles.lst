@@ -1,0 +1,4 @@
+com\xavicreus\vetclinic\OwnerServiceTest.class
+com\xavicreus\vetclinic\VetclinicApplicationTests.class
+com\xavicreus\vetclinic\service\PetServiceTest.class
+com\xavicreus\vetclinic\service\VisitServiceTest.class
