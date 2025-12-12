@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: vetclinic
+
+  datasource:
+    url: jdbc:h2:mem:vetclinicdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update   # crea/actualiza automáticamente las tablas
+    show-sql: true        # mostrar queries SQL en consola
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true      # habilita la consola web de H2
+      path: /h2-console  # URL para acceder a la consola
+server:
+  port: 8080             # puerto de la aplicación
